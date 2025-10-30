@@ -129,11 +129,8 @@ describe('Reduce function', () => {
       expect(actual).toBe(expected);
     });
 
-    it('should handle empty array', () => {
-      const actual = [].reduce2(mockReducer);
-
-      expect(mockReducer).toHaveBeenCalledTimes(0);
-      expect(actual).toBeUndefined();
+    it('should handle empty array and throw TypeError', () => {
+      expect(() => [].reduce2(mockReducer)).toThrow(TypeError);
     });
   });
 });
